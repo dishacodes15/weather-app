@@ -1,4 +1,4 @@
- 
+
 * {
   margin: 0;
   padding: 0;
@@ -107,6 +107,15 @@ body {
   font-size: 18px; /* Reduced font size */
   margin-top: 20px; /* Reduced margin */
   display: none;
+}
+
+footer {
+  text-align: center;
+  padding: 10px 0;
+  margin-top: auto; /* Push footer to the bottom */
+  color: #fff; /* White text for better visibility */
+  background-color: #333; /* Darker background for footer */
+  font-size: 0.9em;
 }
 
 /* Media query for smaller screens */
