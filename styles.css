@@ -1,3 +1,4 @@
+/* styles.css */
 
 * {
   margin: 0;
@@ -7,22 +8,45 @@
 }
 
 body {
-  background: #222;
-  min-height: 100vh; /* Ensure body covers the full viewport height */
-  display: flex; /* Use flexbox for vertical centering */
-  flex-direction: column; /* Stack content vertically */
+  margin: 0;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column; /* Make body a flex container with column direction */
+  min-height: 100vh; /* Ensure full viewport height */
+  background-color: #222;
+  align-items: center; /* Center horizontally */
+}
+
+.background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.5s ease;
 }
 
 .card {
+  background: #ebfffc;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
   width: 90%;
   max-width: 470px;
-  background: linear-gradient(135deg, #00feba, #5b548a);
-  color: #fff;
-  margin: 50px auto; /* Reduced top margin and auto horizontal margins */
-  border-radius: 20px;
-  padding: 30px 25px; /* Reduced padding for smaller screens */
-  text-align: center;
-  flex-shrink: 0; /* Prevent card from shrinking */
+  /* margin: 100px auto 0;  Remove this margin */
+  /* margin-bottom: 20px; Remove this margin */
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1; /* Allow the content wrapper to grow and take up available space */
 }
 
 .search {
@@ -37,12 +61,12 @@ body {
   outline: 0;
   background: #ebfffc;
   color: #555;
-  padding: 10px 15px; /* Reduced padding for input */
-  height: 50px; /* Reduced height for input */
+  padding: 10px 25px;
+  height: 60px;
   border-radius: 30px;
   flex: 1;
-  margin-right: 10px; /* Reduced margin */
-  font-size: 16px; /* Reduced font size for input */
+  margin-right: 16px;
+  font-size: 18px;
 }
 
 .search button {
@@ -50,22 +74,27 @@ body {
   outline: 0;
   background: #ebfffc;
   border-radius: 50%;
-  height: 50px; /* Reduced height for button */
-  width: 50px; /* Reduced width for button */
+  width: 60px;
+  height: 60px;
   cursor: pointer;
 }
 
 .search button img {
-  width: 25px; /* Reduced image size */
+  width: 16px;
+}
+
+.weather-icon {
+  width: 170px;
+  margin-top: 30px;
 }
 
 .weather h1 {
-  font-size: 60px; /* Reduced font size for heading */
+  font-size: 80px;
   font-weight: 500;
 }
 
 .weather h2 {
-  font-size: 35px; /* Reduced font size for subheading */
+  font-size: 45px;
   font-weight: 400;
   margin-top: -10px;
 }
@@ -74,48 +103,54 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 10px; /* Reduced padding */
-  margin-top: 30px; /* Reduced margin */
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  padding: 0 20px;
+  margin-top: 50px;
 }
 
 .col {
   display: flex;
   align-items: center;
   text-align: left;
-  margin-bottom: 15px; /* Added margin between columns on smaller screens */
 }
 
 .col img {
-  width: 30px; /* Reduced image size */
-  margin-right: 8px; /* Reduced margin */
+  width: 40px;
+  margin-right: 10px;
 }
 
-.humidity,
-.wind {
-  font-size: 24px; /* Reduced font size */
+.Humidity,
+.Wind {
+  font-size: 28px;
   margin-top: -6px;
-}
-
-.weather {
-  display: none;
 }
 
 .error {
   text-align: left;
   margin-left: 10px;
-  font-size: 18px; /* Reduced font size */
-  margin-top: 20px; /* Reduced margin */
+  font-size: 14px;
+  margin-top: 10px;
   display: none;
 }
 
 footer {
   text-align: center;
   padding: 10px 0;
-  margin-top: auto; /* Push footer to the bottom */
-  color: #fff; /* White text for better visibility */
-  background-color: #333; /* Darker background for footer */
+  color: #fff;
+  background-color: #333;
   font-size: 0.9em;
+  width: 100%; /* Make footer full width */
+}
+
+.weather {
+  display: none; /* Hide the weather information by default */
+}
+
+.card.show-weather .weather {
+  display: block; /* Show the weather information when the 'show-weather' class is added to the card */
+}
+
+.card.show-weather .search{
+  margin-bottom: 30px;
 }
 
 /* Media query for smaller screens */
